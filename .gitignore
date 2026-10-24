@@ -1,0 +1,19 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+venv/
+.env
+.idea/
+.vscode/
+*.egg-info/
+build/
+dist/
+
+# Keep course inputs local until you choose which data to publish.
+data/raw/*
+!data/raw/README.md
+data/processed/*
+!data/processed/README.md
