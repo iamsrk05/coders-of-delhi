@@ -66,3 +66,4 @@ for user in data["users"]:
     print(f"Friends: {user['friends']}")
     print(f"Liked Pages: {user['liked_pages']}")
     print()
+
