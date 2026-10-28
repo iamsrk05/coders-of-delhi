@@ -4,8 +4,8 @@
     {
       "id": 1,
       "name": "Amit",
-      "friends": [1,2, 3],
-      "liked_pages": [101,101]
+      "friends": [2, 3],
+      "liked_pages": [101]
     },
     {
       "id": 2,

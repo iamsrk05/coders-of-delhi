@@ -25,7 +25,8 @@ for user in data["users"]:
         print(f"Duplicate detected for {user['name']} and cleaned as: {cleaned_pages}")
         print(cleaned_pages)
 
-    print(f"User: {user['name']}\nFriends: {user['friends']}\nLiked Page: {user['liked_pages']}")
+    # print(f"User: {user['name']}\nFriends: {user['friends']}\nLiked Page: {user['liked_pages']}")
+
 
 valid_user_ids = set()
 
@@ -42,7 +43,6 @@ for user in data["users"]:
         print(user["friends"])
 
     for friend_id in user["friends"]:
-        print('friend_id =>', friend_id, 'valid_user_ids =>', valid_user_ids )
         if friend_id not in valid_user_ids:
             print(f"Invalid friend ID: {friend_id} for {user['name']}")
 
@@ -67,3 +67,11 @@ for user in data["users"]:
     print(f"Liked Pages: {user['liked_pages']}")
     print()
 
+with open("coders-of-delhi/data/processed/processed_data.json", "w", encoding="utf-8") as file:
+    json.dump(data, file,indent=4)
+    
+with open("coders-of-delhi/data/processed/processed_data.json", "r", encoding="utf-8") as file:
+    verified_data = json.load(file)
+
+print("Verified users:", len(verified_data["users"]))
+print("Verified pages:", len(verified_data["pages"]))
