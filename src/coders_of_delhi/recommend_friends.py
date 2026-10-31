@@ -1,8 +1,8 @@
-"""Friend recommendation work belongs here. Add your own implementation."""
+
 import json
 
 with open("coders-of-delhi/data/processed/processed_data.json", "r", encoding="utf-8") as file:
-	data = json.load(file)
+    data = json.load(file)
 
 print("Total users:", len(data["users"]))
 
@@ -19,15 +19,5 @@ for friend_id in direct_friends:
     friends_of_friends = user_lookup[friend_id]["friends"]
 
     for candidate_id in friends_of_friends:
-        # Check whether candidate_id is not the target
-        # Check whether candidate_id is not already a direct friend
-        # Print only eligible candidate IDs
-
-
-
-
-
-# for user in user_lookup:
-#     for friend_id in direct_friends:
-#         friend = user_lookup[friend_id]
-#         print(f"Friend {friend_id} knows: {friend['friends']}")
+        if candidate_id != target_user_id and candidate_id not in direct_friends:
+            print(f"Possible friend: {candidate_id}")
